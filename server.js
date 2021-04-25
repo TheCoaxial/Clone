@@ -5,7 +5,7 @@ const cors = require("cors");
 const db = require("./models");
 
 let corsOptions = {
-  origin: "https://salty-sea-99414.herokuapp.com"
+  origin: "https://peaceful-wildwood-04186.herokuapp.com/"
 };
 
 if (process.env.NODE_ENV !== "production") {
