@@ -149,7 +149,8 @@ export default function SearchBar() {
       author={result.author}
       id={result.id}
       UserId={result.UserId} />
-    );
+      );
+      console.log(resultsJSX);
   } else {
     let prevKey;
     resultsJSX = searchResults.results.map(({ Brew }) => {
