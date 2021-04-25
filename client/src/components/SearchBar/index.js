@@ -151,7 +151,7 @@ export default function SearchBar() {
       UserId={result.UserId} />
     );
   } else {
-    let prevKey = -1;
+    let prevKey;
     resultsJSX = searchResults.results.map(({ Brew }) => {
       if (prevKey === Brew.id) {
         return;
