@@ -133,13 +133,13 @@ export default function SearchBar() {
 
   let resultsJSX;
 
-  if (searchResults.type === "user") {
+  if (searchResults.type === "user") {  
     resultsJSX = searchResults.results.map(result => <UserCard
       key={result.id}
       username={result.username}
       bio={result.bio}
       score={result.contributionScore}
-      id={result.id} />);
+      id={result.id} />); 
   } else if (searchResults.type === "brew") {
     resultsJSX = searchResults.results.map(result => <RecipeCard
       key={result.id}
@@ -167,7 +167,7 @@ export default function SearchBar() {
         id={Brew.id}
         UserId={Brew.UserId} />
     });
-  }
+  } 
 
   return (
     <div className={classes.grow} id="searchWrapper">
@@ -179,6 +179,7 @@ export default function SearchBar() {
           </div>
           <div id="searchBoxVerticalAlign">
             <InputBase
+              required
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
@@ -205,7 +206,9 @@ export default function SearchBar() {
         <Button type="submit">Search</Button>
       </form>
       <div id="search-results">
-        {resultsJSX}
+        {resultsJSX[0] ? (resultsJSX)
+      :  
+      <h1>Enter a {searchType} to search!</h1>}
       </div>
     </div>
   );
